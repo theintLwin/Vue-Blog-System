@@ -1,18 +1,24 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h2>Userone - {{userOne}}</h2>
+    <button @click="changeName">change name</button>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import { ref } from '@vue/reactivity';
 
-export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
+  export default {
+    setup(){
+      let userOne=ref("theint theint lwin");
+      let changeName = ()=>{
+        userOne.value = "Beautiful theint lwin";
+      }
+      return {userOne,changeName};
+    }
   }
-}
+
 </script>
+<style >
+
+</style>
