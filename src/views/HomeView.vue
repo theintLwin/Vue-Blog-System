@@ -1,24 +1,37 @@
 <template>
   <div class="home">
-    <h2>Userone - {{userOne}}</h2>
-    <button @click="changeName">change name</button>
+    <input type="text" v-model="search">
+   <p>search item - {{search}}</p>
+    <div v-for="name in filteredNames" :key="name">
+      <p>{{name}}</p>
+    </div>
+  
+     
   </div>
 </template>
 
 <script>
 import { ref } from '@vue/reactivity';
+import { computed } from '@vue/runtime-core';
 
-  export default {
-    setup(){
-      let userOne=ref("theint theint lwin");
-      let changeName = ()=>{
-        userOne.value = "Beautiful theint lwin";
-      }
-      return {userOne,changeName};
-    }
+
+export default {
+   setup(){
+    let names = ref(["aung aung","mg mg","kyaw kyaw","aye aye","susu"]);
+    let search = ref("");
+    
+    let filteredNames = computed(()=>{
+      return names.value.filter(name=>{
+        return name.includes(search.value);
+      })
+    })
+    return {names,search,filteredNames};
+   }
+   
   }
 
 </script>
+
 <style >
 
 </style>
