@@ -1,37 +1,45 @@
 <template>
   <div class="home">
-    <input type="text" v-model="search">
-   <p>search item - {{search}}</p>
-    <div v-for="name in filteredNames" :key="name">
-      <p>{{name}}</p>
-    </div>
-  
+      <div v-if="posts.length>0">
+        <PostList :posts="posts"></PostList>
+      </div> 
+      <div v-else>
+        loading...
+        <!-- loading...  loading feature later coming soon.. -->
+      </div> 
      
+    <div v-if="error">
+          <p>{{error}}</p>
+    </div>
+   
   </div>
 </template>
 
 <script>
-import { ref } from '@vue/reactivity';
-import { computed } from '@vue/runtime-core';
+import PostList from '../components/PostList'
+
+import getPosts from "../composables/getPosts"
 
 
-export default {
-   setup(){
-    let names = ref(["aung aung","mg mg","kyaw kyaw","aye aye","susu"]);
-    let search = ref("");
-    
-    let filteredNames = computed(()=>{
-      return names.value.filter(name=>{
-        return name.includes(search.value);
-      })
-    })
-    return {names,search,filteredNames};
-   }
-   
-  }
+  export default {
+  components: { PostList },
+      setup(){
+        //composable function
+          let {posts, error, load} = getPosts();
+            load(); //invoke
+            return { posts, error };
+              //destructuring...
+        // let {name,age} = {
+        //     name:"theint",
+        //     age:20
+        //   };
+        //   console.log(name);
+        //   console.log(age);
+      }
+    }
 
 </script>
 
-<style >
-
-</style>
+  <style>
+  
+  </style>
