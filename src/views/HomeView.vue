@@ -4,7 +4,7 @@
         <PostList :posts="posts"></PostList>
       </div> 
       <div v-else>
-        loading...
+        <Spinner></Spinner>
         <!-- loading...  loading feature later coming soon.. -->
       </div> 
      
@@ -16,13 +16,15 @@
 </template>
 
 <script>
+import Spinner from '../components/Spinner'
 import PostList from '../components/PostList'
 
 import getPosts from "../composables/getPosts"
 
 
   export default {
-  components: { PostList },
+  components: {
+    Spinner, PostList },
       setup(){
         //composable function
           let {posts, error, load} = getPosts();
