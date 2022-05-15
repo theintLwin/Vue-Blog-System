@@ -6,7 +6,7 @@
         
         <p>{{cutBodyPost}}</p>
         <div v-for="tag in post.tags" :key="tag" class="pill">
-            {{tag}}
+           <router-link :to="{name:'Tag',params:{tag:tag}}"> {{tag}}</router-link>
         </div>
 
     </div>
@@ -60,5 +60,8 @@ export default {
         padding: 8px;
         border-radius: 20px;
         font-size: 14px;
+      }
+      a{
+        text-decoration: none;
       }
 </style>

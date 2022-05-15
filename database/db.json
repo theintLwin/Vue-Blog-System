@@ -1,36 +1,29 @@
 {
   "posts": [
     {
-      "title": "post title 1",
-      "id": 1,
-      "body": "lorem ipsum"
-    },
-    {
-      "title": "post title 2",
-      "id": 2,
-      "body": "lorem ipsum"
-    },
-    {
-      "title": "post title 3",
-      "id": 3,
-      "body": "lorem ipsum"
-    },
-    {
-      "title": "Today 25.4.22",
-      "body": "I'm feeling dizzy.",
+      "title": "test",
+      "body": "test...",
       "tags": [
-        "html",
-        "css",
-        "vuejs",
-        "bootstrap"
+        "web dev",
+        "vuejs"
       ],
-      "id": 4
+      "id": 6
     },
     {
-      "title": "apple",
-      "body": "how to get apple",
-      "tags": [],
-      "id": 5
+      "title": "vuejs",
+      "body": "vuejs...",
+      "tags": [
+        "vuejs"
+      ],
+      "id": 7
+    },
+    {
+      "title": "laravel",
+      "body": "laravel..",
+      "tags": [
+        "laravel"
+      ],
+      "id": 8
     }
   ]
 }
