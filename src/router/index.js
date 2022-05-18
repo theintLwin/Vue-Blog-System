@@ -28,6 +28,7 @@ const routes = [
     props:true
   }
   
+  
 ]
 
 const router = createRouter({
