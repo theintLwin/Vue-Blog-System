@@ -7,7 +7,7 @@
       </div>
     
       <div>
-        <TagCloud></TagCloud>
+        <TagCloud :posts="posts"></TagCloud>
       </div>
     </div>
     <div v-else>
