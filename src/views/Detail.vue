@@ -5,7 +5,7 @@
       <p>{{post.body}}</p>
   </div>
   <div v-else>
-      <Spinner></Spinner>
+      <Spinner></Spinner>                   
       <!-- loading...spiner component -->
   </div>
 
